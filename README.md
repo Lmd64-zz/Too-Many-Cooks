@@ -15,3 +15,7 @@ It generates off a short animated gif from your webcam input, in the style of th
 
 ## What would you want to do something like that for?
 Shits and giggles, mostly.
+
+## What does it look like?
+Like this:
+![Too Many Cooks, starring Me](https://raw.githubusercontent.com/Lmd64/Too-Many-Cooks/master/Too_Many_Cooks_-141124224536.gif)
