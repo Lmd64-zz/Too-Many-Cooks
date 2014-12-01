@@ -13,13 +13,19 @@ for index in "${!CAPTIONS[@]}"; do
 	#strip spaces
 	CAPTION_NOSPACES=${CAPTION// /.}
 
-	read -p "Get $CAPTION to sit in front of the camera, press any key when ready:" -n1 -s
+    echo "Get $CAPTION to sit in front of the camera."
+    echo "Ready? Look away. Look towards the camera at the first beep,"
+    echo "hold that pose until the second beep."
+	read -p "Press any key when ready:" -n1 -s
 	echo
 
 	#take photos
-	(sleep 1; printf "\a") &
 	/usr/local/bin/imagesnap -q -t 0.1 -w 1.0 photo.png & sleep 3.5 ; kill $!
-	printf "\a"
+
+#beep after 2 second
+(sleep 2; printf "\a") &
+#beep after 3.5 seconds
+(sleep 3.5; printf "\a") &
 
 	#reset filemask to just the last batch of imagesnaps
 	FILEMASK=snapshot-*.jpg
