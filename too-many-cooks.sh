@@ -7,16 +7,23 @@ args=$@
 CAPTIONS=( "$@" )
 CAPTIONCOUNT=${#CAPTIONS[@]}
 
+clear
+
 for index in "${!CAPTIONS[@]}"; do
 	#get caption
 	CAPTION=${CAPTIONS[$index]}
 	#strip spaces
 	CAPTION_NOSPACES=${CAPTION// /.}
 
+	echo
     echo "Get $CAPTION to sit in front of the camera."
-    echo "Ready? Look away. Look towards the camera at the first beep,"
-    echo "hold that pose until the second beep."
-	read -p "Press any key when ready:" -n1 -s
+    echo
+    echo "Hey $CAPTION, are you ready? Here goes..."
+    echo
+    echo "1. Look away from the camera."
+    echo "2. Look towards the camera after a second and smile."
+	echo
+    read -p "Press any key when ready:" -n1 -s
 	echo
 
 	#take photos
